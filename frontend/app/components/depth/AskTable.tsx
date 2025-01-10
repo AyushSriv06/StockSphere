@@ -1,4 +1,3 @@
-import { number } from "zod";
 
 export const AskTable = ({ asks }: {asks: [string, string][]}) => {
     let currentTotal = 0;
@@ -14,7 +13,14 @@ export const AskTable = ({ asks }: {asks: [string, string][]}) => {
     asksWithTotal.reverse();
 
     return <div>
-        {asksWithTotal.map(([price, quantity, total]) => <Ask maxTotal = {maxTotal} key = {price} price = {price} quantity = {quantity} total = {total}/>)}
+        {asksWithTotal.map(([price, quantity, total]) => 
+        <Ask 
+        maxTotal = {maxTotal} 
+        key = {price} 
+        price = {price} 
+        quantity = {quantity} 
+        total = {total}
+        />)}
     </div>
 }
 
